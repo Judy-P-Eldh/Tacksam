@@ -1,0 +1,29 @@
+body {
+    padding: 2em;
+}
+
+.carousel-control-prev {
+  left: -5vw; /* 5% av viewport-bredden utanför */
+}
+
+.carousel-control-next {
+  right: -5vw;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+}
+
+.card {
+    position: relative;
+    overflow: visible;
+    max-width: 90%;
+    margin:auto;
+    height: 50vh;
+    overflow-y: scroll;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
