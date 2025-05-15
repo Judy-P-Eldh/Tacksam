@@ -27,3 +27,21 @@ body {
     border-radius: 8px;
 }
 
+/* Formulär */
+form {
+    border-style: double;
+    padding:2em;
+    border-radius: 8px;
+}
+
+#entryDisplay {
+  background-color: #f9f9f9;   /* Ljus bakgrund för att skilja ut rutan */
+  border: 1px solid #ccc;      /* Tunn grå ram */
+  border-radius: 6px;          /* Mjuka hörn */
+  padding: 16px;               /* Luft inuti rutan */
+  margin-top: 20px;            /* Avstånd ovanför */
+  color: #222;                 /* Textfärg */
+  font-size: 1rem;             /* Standardstorlek på text */
+  min-height: 60px;            /* Lägsta höjd även om det är tomt */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Lätt skugga för djup */
+}
