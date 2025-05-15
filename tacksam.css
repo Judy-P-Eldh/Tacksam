@@ -1,9 +1,71 @@
 body {
-  padding: 4vw;
+  padding: 10vw;
 }
 
-p {
-  padding: 1rem;
+#background1 {
+  width: 100%;
+  background-image: url(/Bilder/TacksamBilder-7-tacksam7.png);
+  background-repeat: no-repeat;
+  padding: 2vw;
+  margin: 2vw auto;
+  border-radius: 8px;
+}
+
+#background2 {
+  width: 100%;
+  background-image: url(/Bilder/TacksamBilder-3-tacksam3.png);
+  background-repeat: no-repeat;
+  padding: 5vw;
+  margin: 2vw auto;
+  border-radius: 8px;
+}
+
+#background3 {
+  width: 100%;
+  background-image: url(/Bilder/TacksamBilder-2-tacksam2.png);
+  background-repeat: no-repeat;
+  padding: 2vw;
+  margin: 2vw auto;
+  border-radius: 8px;
+}
+
+.howItWorks {
+   background-color: rgba(255, 255, 255, 0.6);
+   padding: 5vw;
+   border-radius:8px;
+}
+
+.btn {
+  background-color:rgb(92, 121, 92);
+  color: white;
+  padding: 2vw;
+  border: thin solid rgb(39, 48, 39);
+}
+
+.btn:hover {
+  border:thin solid rgb(92, 121, 92);
+   color: white;
+   background-color: rgb(39, 48, 39);
+}
+
+#nextDay {
+background-color:rgb(39, 48, 39);
+padding: 2vw;
+border: thin solid white;
+}
+
+#nextDay:hover {
+background-color:rgb(92, 121, 92);
+padding: 2vw;
+border: thin solid rgb(39, 48, 39);
+}
+
+p, h5 {
+  padding: 0.3vw;
+}
+
+.carousel {
+  margin: 5vw auto;
 }
 
 .carousel-control-prev {
@@ -30,6 +92,7 @@ p {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Formulär */
@@ -37,6 +100,12 @@ form {
   border-style: double;
   padding: 2em;
   border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+form p, form label, form li {
+  color: #000000;
+  font-weight: 600;
 }
 
 #entryDisplay {
@@ -54,7 +123,8 @@ form {
 
 /* Modalens bakgrund (overlay) */
 .modal {
-  display: none; /* Visa med JS: display: block; */
+  display: none;
+  /* Visa med JS: display: block; */
   position: fixed;
   z-index: 9999;
   left: 0;
@@ -64,6 +134,7 @@ form {
   overflow: auto;
   background: rgba(0, 0, 0, 0.6);
 }
+
 .modal-header {
   display: flex;
   align-items: center;
@@ -82,6 +153,7 @@ form {
   cursor: pointer;
   transition: background 0.2s;
 }
+
 .modal-header button:hover {
   background: #217dbb;
 }
@@ -97,6 +169,7 @@ form {
   line-height: 1;
   transition: color 0.2s;
 }
+
 .close:hover {
   color: #e74c3c;
 }
@@ -112,7 +185,7 @@ form {
   max-width: 700px;
   max-height: 80vh;
   overflow-y: auto;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   position: relative;
   font-family: Arial, sans-serif;
   animation: modal-fadein 0.25s;
@@ -122,21 +195,25 @@ form {
 #allEntriesContent {
   margin-top: 12px;
 }
+
 .entry {
   border-bottom: 1px solid #eee;
   margin-bottom: 18px;
   padding-bottom: 10px;
 }
+
 .entry:last-child {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
 .entry h2 {
   margin: 0 0 6px 0;
   font-size: 1.2rem;
   color: #2c3e50;
 }
+
 .entry p {
   margin: 2px 0 0 0;
   font-size: 1rem;
@@ -154,14 +231,17 @@ form {
     border-radius: 0;
     padding: 14px 6px 12px 6px;
   }
+
   .close {
     font-size: 2.5rem;
     top: 8px;
     right: 12px;
   }
+
   .entry h2 {
     font-size: 1.05rem;
   }
+
   .entry p {
     font-size: 0.97rem;
   }
@@ -169,6 +249,13 @@ form {
 
 /* Enkel fade-in-animation */
 @keyframes modal-fadein {
-  from { opacity: 0; transform: translateY(40px);}
-  to { opacity: 1; transform: none;}
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
