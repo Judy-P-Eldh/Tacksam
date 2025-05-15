@@ -34,12 +34,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const diffTime = selectedDate - startDate;
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         const tacksamLabel = document.getElementById("tacksamLabel");
+        const background3 = document.getElementById('background3').style.backgroundImage = "url('Bilder/TacksamBilder-1-tacksam1.png')";
         if (tacksamLabel) {
             if ((diffDays + 1) % 8 === 0) {
                 tacksamLabel.textContent = "Vad har varit extra speciellt idag?";
             } else {
                 tacksamLabel.textContent = "Vad är jag tacksam för idag?";
             }
+        }
+        if (background3) {
+            const imageIndex = Math.floor((diffDays) / 8) % 8;
+            background3.style.backgroundImage = `url('Bilder/bild${imageIndex + 1}.png')`;
         }
     }
 
