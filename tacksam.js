@@ -123,3 +123,92 @@ document.getElementById('nextDay').addEventListener('click', function () {
     document.getElementById('why').value = '';
     document.getElementById('tankar').value = '';
 });
+
+function openModal() {
+    const diary = JSON.parse(localStorage.getItem('tacksamhetsdagbok')) || {};
+    const entries = Object.entries(diary);
+
+    // Sortera på datum, nyaste först
+    entries.sort((a, b) => new Date(b[0]) - new Date(a[0]));
+
+    let html = '';
+    for (const [date, entry] of entries) {
+        html += `
+            <div class="entry">
+                <h2>${date} - ${entry.day || ''}</h2>
+                <p><strong>Tacksam för:</strong> ${entry.tacksam || ''}</p>
+                <p><strong>Varför:</strong> ${entry.why || ''}</p>
+                <p><strong>Tankar:</strong> ${entry.tankar || ''}</p>
+            </div>
+        `;
+    }
+    document.getElementById('allEntriesContent').innerHTML = html;
+    document.getElementById('allEntriesModal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('allEntriesModal').style.display = 'none';
+}
+
+function exportDiaryAsHTML() {
+    const diary = JSON.parse(localStorage.getItem('tacksamhetsdagbok')) || {};
+    let htmlContent = `
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Tacksamhetsdagbok</title>
+            <style>
+                body { font-family: Arial, sans-serif; padding: 20px; }
+                .entry { margin-bottom: 20px; }
+            </style>
+        </head>
+        <body>
+            <h1>Min Tacksamhetsdagbok</h1>
+    `;
+    for (const date in diary) {
+        const entry = diary[date];
+        htmlContent += `
+            <div class="entry">
+                <h2>${date} - ${entry.day || ''}</h2>
+                <p><strong>Tacksam för:</strong> ${entry.tacksam || ''}</p>
+                <p><strong>Varför:</strong> ${entry.why || ''}</p>
+                <p><strong>Tankar:</strong> ${entry.tankar || ''}</p>
+            </div>
+        `;
+    }
+    htmlContent += `</body></html>`;
+    const blob = new Blob([htmlContent], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'tacksamhetsdagbok.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+function exportDiaryAsPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const diary = JSON.parse(localStorage.getItem('tacksamhetsdagbok')) || {};
+    const entries = Object.entries(diary);
+    // Sortera posterna på datum, nyaste först
+    entries.sort((a, b) => new Date(b[0]) - new Date(a[0]));
+
+    let y = 15;
+    doc.setFontSize(16);
+    doc.text("Min Tacksamhetsdagbok", 10, y);
+    y += 10;
+    doc.setFontSize(12);
+
+    for (const [date, entry] of entries) {
+        if (y > 270) { doc.addPage(); y = 15; }
+        doc.text(`${date} - ${entry.day || ''}`, 10, y); y += 7;
+        doc.text(`Tacksam för: ${entry.tacksam || ''}`, 10, y); y += 7;
+        doc.text(`Varför: ${entry.why || ''}`, 10, y); y += 7;
+        doc.text(`Tankar: ${entry.tankar || ''}`, 10, y); y += 10;
+    }
+    doc.save('tacksamhetsdagbok.pdf');
+}
+
