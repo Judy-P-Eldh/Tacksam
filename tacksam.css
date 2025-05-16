@@ -33,6 +33,8 @@ h5 {
   background-color: rgb(39, 48, 39);
   padding: 2vw;
   border: thin solid white;
+  margin: 0 auto;
+
 }
 
 #nextDay:hover {
@@ -135,6 +137,13 @@ form li, form label {
   min-height: 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   /* Lätt skugga för djup */
+}
+
+#uppmuntran {
+font-family:cursive;
+font-size: large;
+padding: 2vw;
+text-align: center;
 }
 
 /* Modalens bakgrund (overlay) */

@@ -219,3 +219,70 @@ function exportDiaryAsPDF() {
     doc.save('tacksamhetsdagbok.pdf');
 }
 
+//Uppmuntran
+const uppmuntran = [
+    "Du är värdefull och älskad",
+    "Du gör skillnad",
+    "Var snäll mot dig själv",
+    "Små steg leder till stora förändringar",
+    "Du är starkare än du tror",
+    "Idag blir en bra dag",
+    "Du är fantastisk",
+    "Du är inte ensam",
+    "Tänk på någon du tycker om",
+    "Gör något som du blir glad av",
+    "Du förtjänar att känna lycka",
+    "Du gör ditt bästa, och det räcker",
+    "Var dig själv, det är bäst så",
+    "Du är unik",
+    "Du är modig",
+    "Du är stark även när det känns svårt",
+    "Det finns bara en av dig, och du behövs precis som du är",
+    "Lärdom är ett steg på vägen",
+    "Bjud på ett leende idag",
+    "Ge dig själv en stund av vila",
+    "Tänk på något som du blir glad av",
+    "Ta emot all kärlek som finns runt dig",
+    "Våga drömma stort",
+    "Ge dig själv beröm",
+    "Var tacksam för det lilla i livet",
+    "Sätt gränser som skyddar din energi",
+    "Be om hjälp när du behöver det",
+    "Omge dig med människor som lyfter dig",
+    "Ge dig själv tid att växa",
+    "Var närvarande i stunden",
+    "Fira dina små och stora segrar",
+    "Våga tro att det kan bli bra",
+    "Var förstående mot dig själv",
+    "Utforska världen med nyfikenhet idag",
+    "Var stolt över den du är på insidan",
+    "Var så äkta du kan",
+    "Du behöver inte vara perfekt",
+    "Skapa utrymme för stillhet och reflektion",
+    "Sätt ord på dina drömmar och mål",
+    "Var extra snäll mot någon idag",
+    "Ge dig själv en komplimang",
+    "Hitta något att skratta åt",
+    "Fokusera på det du kan påverka",
+    "Tro på att du kan skapa positiv förändring",
+    "Få någon att skratta idag",
+    "Släpp all oro så länge du kan",
+    "Tänk på något som du tycker är viktigt",
+    "Ge någon en kram"
+];
+
+// 1. Välj ett fast startdatum (YYYY-MM-DD)
+const startDatum = new Date("2025-05-16"); // t.ex. dagens datum vid lansering
+
+function visaDagensUppmuntran() {
+    const idag = new Date();
+    // 2. Räkna ut antal dagar sedan startdatum
+    const diffTid = idag - startDatum;
+    const diffDagar = Math.floor(diffTid / (1000 * 60 * 60 * 24));
+    // 3. Välj rätt index i arrayen, och börja om när arrayen är slut
+    const index = diffDagar % uppmuntran.length;
+    document.getElementById("uppmuntran").textContent = uppmuntran[index];
+}
+
+document.addEventListener("DOMContentLoaded", visaDagensUppmuntran);;
+
