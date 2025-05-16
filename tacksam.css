@@ -2,7 +2,11 @@ body {
   padding: 8vw;
 }
 
-p,
+p {
+  padding: 0.3vw;
+  font-weight: 500;
+}
+
 h5 {
   padding: 0.3vw;
 }
@@ -93,7 +97,6 @@ h5 {
 .howItWorks {
   margin: 5vw auto;;
   max-width: 90%;
-  border-style: double;
   padding: 2em;
   border-radius: 8px;
   background-color: #f9f9f986;
@@ -114,9 +117,11 @@ h5 {
 form {
   margin: 5vw auto;;
   max-width: 90%;
-  border-style: double;
   padding: 2em;
   border-radius: 8px;
+}
+form li, form label {
+  font-weight: 500;
 }
 
 #entryDisplay {
