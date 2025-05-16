@@ -30,13 +30,16 @@ carousel.dispatchEvent(event);
 document.addEventListener("DOMContentLoaded", function () {
     function updateLabel(dateStr) {
         const selectedDate = dateStr ? new Date(dateStr) : new Date();
-        const startDate = new Date("2025-05-01");
+        const startTimestamp = localStorage.getItem('tacksamhetsStartDatum');
+        if (!startTimestamp) return; // Säkerhet: gör inget om startdatum saknas
+
+        const startDate = new Date(startTimestamp);
         const diffTime = selectedDate - startDate;
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         const tacksamLabel = document.getElementById("tacksamLabel");
         if (tacksamLabel) {
             if ((diffDays + 1) % 8 === 0) {
-                tacksamLabel.textContent = "Vad har varit extra speciellt idag?";
+                tacksamLabel.textContent = "Vad har betytt mest den här veckan?";
             } else {
                 tacksamLabel.textContent = "Vad är jag tacksam för idag?";
             }
@@ -70,6 +73,10 @@ document.querySelector('form').addEventListener('submit', function (event) {
     if (!formData.date || isNaN(dateObj.getTime())) {
         alert("Fyll i ett giltigt datum!");
         return;
+    }
+
+    if (!localStorage.getItem('tacksamhetsStartDatum')) {
+        localStorage.setItem('tacksamhetsStartDatum', new Date().toISOString());
     }
 
     // Hämta dagbok och lägg till posten
