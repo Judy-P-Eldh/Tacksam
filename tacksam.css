@@ -128,8 +128,8 @@ h5 {
 form {
   margin: 5vw auto;
 
-  max-width: 90%;
-  padding: 2em;
+  max-width: 100%;
+  /* padding: 2em; */
   border-radius: 8px;
 }
 
