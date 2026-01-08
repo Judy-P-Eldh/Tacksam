@@ -126,10 +126,9 @@ h5 {
 
 /* Formulär */
 form {
-  margin: 5vw auto;
-
+  margin: 2rem auto;
+  padding: 2em;
   max-width: 100%;
-  /* padding: 2em; */
   border-radius: 8px;
 }
 
@@ -260,6 +259,11 @@ form li, form label {
 /* Responsivitet för mobil */
 @media (max-width: 600px) {
   body {
+    padding: 1rem;
+  }
+
+  form {
+    margin: 1rem auto;
     padding: 1rem;
   }
 
