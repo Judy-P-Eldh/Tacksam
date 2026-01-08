@@ -119,21 +119,42 @@ h5 {
   background-size: cover;
   background-position: center;
   margin: 2rem auto;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 8px;
   max-width: 1200px;
 }
 
 /* Formulär */
 form {
-  margin: 2rem auto;
-  padding: 2em;
-  max-width: 100%;
+  margin: 1rem auto; /* Minskat från 5vw */
+  max-width: 100%; /* Ändrat från 90% */
+  padding: 0;
   border-radius: 8px;
 }
 
+ /* #gratitudeForm {
+  max-width: 100%;
+  border-radius: 8px;
+ } */
+
 form li, form label {
   font-weight: 500;
+}
+
+form ul {
+  padding-left: 1.2rem; /* Minska från default 40px */
+  margin-left: 0;
+}
+
+/* Minska Bootstraps row-spacing */
+.datumsection.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.datumsection .col {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 #entryDisplay {
@@ -262,9 +283,23 @@ form li, form label {
     padding: 1rem;
   }
 
-  form {
+ #formBackground {
+    padding: 0.5rem;
     margin: 1rem auto;
-    padding: 1rem;
+  }
+  
+  form {
+    padding: 0.75rem;
+    margin: 0.5rem auto;
+  }
+
+   form ul {
+    padding-left: 1rem;
+  }
+  
+  .datumsection .col {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
 
   .modal-content {
