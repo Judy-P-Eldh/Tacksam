@@ -146,8 +146,10 @@ h5 {
 
 /* Formulär */
 form {
-  margin: 1rem auto; /* Minskat från 5vw */
-  max-width: 100%; /* Ändrat från 90% */
+  margin: 1rem auto;
+  /* Minskat från 5vw */
+  max-width: 100%;
+  /* Ändrat från 90% */
   padding: 0;
   border-radius: 8px;
 }
@@ -157,7 +159,8 @@ form li, form label {
 }
 
 form ul {
-  padding-left: 1.2rem; /* Minska från default 40px */
+  padding-left: 1.2rem;
+  /* Minska från default 40px */
   margin-left: 0;
 }
 
@@ -292,26 +295,32 @@ form ul {
   color: #444;
 }
 
+.download stripe-buy-button {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+}
+
 /* Responsivitet för mobil */
 @media (max-width: 600px) {
   body {
     padding: 1rem;
   }
 
- #formBackground {
+  #formBackground {
     padding: 0.5rem;
     margin: 1rem auto;
   }
-  
+
   form {
     padding: 0.75rem;
     margin: 0.5rem auto;
   }
 
-   form ul {
+  form ul {
     padding-left: 1rem;
   }
-  
+
   .datumsection .col {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
@@ -340,6 +349,18 @@ form ul {
   .entry p {
     font-size: 0.97rem;
   }
+}
+
+.download h1 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+.download stripe-buy-button {
+  transform: scale(0.9);
+  transform-origin: left top;
+  margin: 1rem 0;
 }
 
 /* Enkel fade-in-animation */
