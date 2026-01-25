@@ -40,6 +40,15 @@ h5 {
   text-wrap-style: pretty;
 }
 
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+
 
 #visaPoster {
   display: block;
@@ -306,13 +315,15 @@ form ul {
 }
 
 /* downlad-page */
-
 .download h1 {
-    font-size: 1.3rem;
-    line-height: 1.3;
-  }
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
 
 .stripe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 100%;
   margin: 5vw auto;
   max-width: 90%;
@@ -321,11 +332,8 @@ form ul {
   background-color: #f9f9f986;
 }
 
-.stripe stripe-buy-button {
+stripe-buy-button {
   display: block;
-  margin: 1rem auto;
-  max-width: 80%;
-  /* overflow: hidden; */
 }
 
 /* Responsivitet för mobil */
@@ -389,10 +397,17 @@ form ul {
     text-wrap-style: pretty;
   }
 
-  .stripe stripe-buy-button {
-    transform: scale(0.6);
-    margin: 1rem auto;
+  .stripe {
+    padding: 0.1rem;
   }
+
+  stripe-buy-button {
+    display: block;
+    transform: scale(0.7);
+    margin-inline: auto;
+  }
+
+
 }
 
 
