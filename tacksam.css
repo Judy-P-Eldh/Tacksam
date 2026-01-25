@@ -112,7 +112,7 @@ h5 {
   background-color: #f9f9f986;
 }
 
-#downloadBackground {
+#downloadBackground, #downloadBg {
   background-image: url(Bilder/tacksam4.png);
   width: 100%;
   min-height: 500px;
