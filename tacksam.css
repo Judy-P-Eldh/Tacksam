@@ -295,16 +295,29 @@ form ul {
   color: #444;
 }
 
-.download stripe-buy-button {
-  display: block;
+.stripe {
   max-width: 100%;
-  overflow: hidden;
+  margin: 5vw auto;
+  max-width: 90%;
+  border-radius: 8px;
+  background-color: #f9f9f986;
+}
+
+.stripe stripe-buy-button {
+  display: block;
+  max-width: 80%;
+  overflow: scroll;
 }
 
 /* Responsivitet för mobil */
 @media (max-width: 600px) {
   body {
     padding: 1rem;
+  }
+
+  #downloadBackground, #downloadBg {
+    padding: 0.5rem;
+    margin: 1rem auto;
   }
 
   #formBackground {
@@ -357,10 +370,9 @@ form ul {
   word-wrap: break-word;
 }
 
-.download stripe-buy-button {
-  transform: scale(0.9);
-  transform-origin: left top;
-  margin: 1rem 0;
+.stripe stripe-buy-button {
+  transform: scale(0.6);
+  margin: 1rem auto;
 }
 
 /* Enkel fade-in-animation */
